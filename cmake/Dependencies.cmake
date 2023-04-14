@@ -98,8 +98,8 @@ else()
     message(STATUS "Downloading and building rocprim.")
     download_project(
       PROJ                rocprim
-      GIT_REPOSITORY      https://github.com/ROCmSoftwarePlatform/rocPRIM.git
-      GIT_TAG             develop
+      GIT_REPOSITORY      https://github.com/CHIP-SPV/rocPRIM.git
+      GIT_TAG             hipstar
       GIT_SHALLOW         TRUE
       INSTALL_DIR         ${CMAKE_CURRENT_BINARY_DIR}/deps/rocprim
       CMAKE_ARGS          -DBUILD_TEST=OFF -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR> -DCMAKE_PREFIX_PATH=/opt/rocm
