@@ -50,7 +50,7 @@ HIPCUB_DEVICE __forceinline__ T AsmThreadLoad(void * ptr)
     return retval;
 }
 
-#if HIPCUB_THREAD_LOAD_USE_CACHE_MODIFIERS == 1
+#if HIPCUB_THREAD_LOAD_USE_CACHE_MODIFIERS == 1 && !defined(__HIP_PLATFORM_SPIRV__)
 
 // Important for syncing. Check section 9.2.2 or 7.3 in the following document
 // https://developer.amd.com/wordpress/media/2013/12/AMD_GCN3_Instruction_Set_Architecture_rev1.1.pdf

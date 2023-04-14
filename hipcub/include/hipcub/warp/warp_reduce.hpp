@@ -30,7 +30,7 @@
 #ifndef HIPCUB_WARP_WARP_REDUCE_HPP_
 #define HIPCUB_WARP_WARP_REDUCE_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/warp/warp_reduce.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../config.hpp"

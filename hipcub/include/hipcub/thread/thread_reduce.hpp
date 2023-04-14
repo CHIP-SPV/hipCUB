@@ -30,7 +30,7 @@
 #ifndef HIPCUB_THREAD_THREAD_REDUCE_HPP_
 #define HIPCUB_THREAD_THREAD_REDUCE_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../config.hpp"
     #include "../backend/rocprim/thread/thread_reduce.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)

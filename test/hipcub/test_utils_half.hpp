@@ -22,7 +22,7 @@
 #define HIPCUB_TEST_TEST_UTILS_HALF_HPP_
 
 #include <type_traits>
-#include <hipcub/util_type.hpp>
+#include <hipcub/backend/rocprim/util_type.hpp>
 
 #include "half.hpp"
 

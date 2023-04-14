@@ -30,7 +30,7 @@
 #ifndef HIPCUB_ITERATOR_DISCARD_OUTPUT_HPP_
 #define HIPCUB_ITERATOR_DISCARD_OUTPUT_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/iterator/discard_output_iterator.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../config.hpp"

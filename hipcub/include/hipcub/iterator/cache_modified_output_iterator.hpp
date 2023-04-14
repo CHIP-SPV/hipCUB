@@ -30,7 +30,7 @@
 #ifndef HIPCUB_ITERATOR_CACHE_MODIFIED_OUTPUT_HPP_
 #define HIPCUB_ITERATOR_CACHE_MODIFIED_OUTPUT_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../config.hpp"
     #include "../backend/rocprim/iterator/cache_modified_output_iterator.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
