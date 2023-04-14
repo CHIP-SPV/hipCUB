@@ -34,7 +34,7 @@
 #include "../thread/thread_scan.hpp"
 #include "../thread/thread_reduce.hpp"
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/block/block_radix_rank.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../config.hpp"

@@ -26,7 +26,7 @@
 #endif
 
 // hipCUB API
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "hipcub/backend/rocprim/util_ptx.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "hipcub/config.hpp"

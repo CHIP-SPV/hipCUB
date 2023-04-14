@@ -40,7 +40,7 @@
 #define END_HIPCUB_NAMESPACE \
     } /* hipcub */
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) || defined(__HIP_PLATFORM_SPIRV__)
     #define HIPCUB_ROCPRIM_API 1
     #define HIPCUB_RUNTIME_FUNCTION __host__
 
@@ -49,6 +49,7 @@
     #define HIPCUB_DEVICE_WARP_THREADS ::rocprim::device_warp_size()
     #define HIPCUB_HOST_WARP_THREADS ::rocprim::host_warp_size()
     #define HIPCUB_ARCH 1 // ignored with rocPRIM backend
+
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #define HIPCUB_CUB_API 1
     #define HIPCUB_RUNTIME_FUNCTION CUB_RUNTIME_FUNCTION

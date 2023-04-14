@@ -30,7 +30,7 @@
 #ifndef HIPCUB_UTIL_PTX_HPP_
 #define HIPCUB_UTIL_PTX_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "backend/rocprim/util_ptx.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include <cub/util_ptx.cuh>

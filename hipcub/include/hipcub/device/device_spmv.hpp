@@ -30,7 +30,7 @@
 #ifndef HIPCUB_DEVICE_DEVICE_SPMV_HPP_
 #define HIPCUB_DEVICE_DEVICE_SPMV_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/device/device_spmv.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../backend/cub/device/device_spmv.hpp"

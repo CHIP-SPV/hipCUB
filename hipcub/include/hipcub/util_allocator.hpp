@@ -30,7 +30,7 @@
 #ifndef HIPCUB_UTIL_ALLOCATOR_HPP_
 #define HIPCUB_UTIL_ALLOCATOR_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) || defined(__HIP_PLATFORM_SPIRV__)
     #include "backend/rocprim/util_allocator.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "backend/cub/util_allocator.hpp"

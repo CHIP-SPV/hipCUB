@@ -30,7 +30,7 @@
 #ifndef HIPCUB_TEX_REF_INPUT_ITERATOR_HPP_
 #define HIPCUB_TEX_REF_INPUT_ITERATOR_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/iterator/tex_ref_input_iterator.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../config.hpp"

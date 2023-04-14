@@ -30,7 +30,7 @@
 #ifndef HIPCUB_ARG_INDEX_INPUT_ITERATOR_HPP_
 #define HIPCUB_ARG_INDEX_INPUT_ITERATOR_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/iterator/arg_index_input_iterator.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../config.hpp"

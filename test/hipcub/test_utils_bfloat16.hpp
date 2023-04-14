@@ -35,6 +35,8 @@ namespace test_utils
 using bfloat16 = ::hip_bfloat16;
 #elif defined(__HIP_PLATFORM_NVIDIA__)
 using bfloat16 = ::__nv_bfloat16;
+#elif defined(__HIP_PLATFORM_SPIRV__)
+using bfloat16 = ::hip_bfloat16;
 #endif
 
 using native_bfloat16 = bfloat16_t;

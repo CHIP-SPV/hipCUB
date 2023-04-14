@@ -55,7 +55,7 @@ namespace detail
 
 END_HIPCUB_NAMESPACE
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/block/block_adjacent_difference.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../config.hpp"

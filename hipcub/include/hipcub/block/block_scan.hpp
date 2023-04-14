@@ -30,7 +30,7 @@
 #ifndef HIPCUB_BLOCK_BLOCK_SCAN_HPP_
 #define HIPCUB_BLOCK_BLOCK_SCAN_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/block/block_scan.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../config.hpp"

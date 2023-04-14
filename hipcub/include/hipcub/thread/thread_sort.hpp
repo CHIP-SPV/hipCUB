@@ -30,7 +30,7 @@
 #ifndef HIPCUB_THREAD_THREAD_SORT_HPP_
 #define HIPCUB_THREAD_THREAD_SORT_HPP_
 
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) or defined(__HIP_PLATFORM_SPIRV__)
     #include "../backend/rocprim/thread/thread_sort.hpp"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "../config.hpp"

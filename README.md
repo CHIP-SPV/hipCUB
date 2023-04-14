@@ -66,6 +66,9 @@ cmake -DBUILD_TEST=ON ../. # or cmake-gui ../.
 # or to build benchmarks
 cmake -DBUILD_BENCHMARK=ON ../.
 
+# For chipStar, this should work:
+CXX=hipcc cmake .. -DBUILD_TEST=ON -DDOWNLOAD_ROCPRIM=ON -DCMAKE_CXX_FLAGS="-DCHIP_ENABLE_NON_COMPLIANT_DEVICELIB_CODE"
+
 # Build
 make -j4
 

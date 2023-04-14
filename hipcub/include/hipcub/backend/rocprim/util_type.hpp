@@ -43,6 +43,8 @@
 
 BEGIN_HIPCUB_NAMESPACE
 
+using rocprim::bfloat16;
+
 #ifndef DOXYGEN_SHOULD_SKIP_THIS    // Do not document
 
 using NullType = ::rocprim::empty_type;
@@ -225,6 +227,8 @@ struct AlignBytes
     /// The "truly aligned" type
     typedef T Type;
 };
+
+#define __align__(__X__) __attribute__((aligned(__X__)))
 
 // Specializations where host C++ compilers (e.g., 32-bit Windows) may disagree
 // with device C++ compilers (EDG) on types passed as template parameters through
