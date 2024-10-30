@@ -23,11 +23,19 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 cmake_policy(VERSION 3.16...3.21)
 
-# Install prefix
-set(CMAKE_INSTALL_PREFIX "/opt/rocm" CACHE PATH "Install path prefix, prepended onto install directories")
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+    set(STANDALONE_BUILD ON)
+else()
+    set(STANDALONE_BUILD OFF)
+endif()
 
-#Adding CMAKE_PREFIX_PATH
-list( APPEND CMAKE_PREFIX_PATH /opt/rocm/llvm /opt/rocm ${ROCM_PATH})
+# set the default CMAKE_INSTALL_PREFIX to the current directory/install
+if(STANDALONE_BUILD AND CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_BINARY_DIR}/install" CACHE PATH "..." FORCE)
+endif()
+
+# print where the library will be installed
+message(STATUS "hipCUB will be installed to: ${CMAKE_INSTALL_PREFIX}")
 
 # hipCUB project
 project(hipcub LANGUAGES CXX)
