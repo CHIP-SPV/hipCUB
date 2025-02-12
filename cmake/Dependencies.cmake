@@ -99,7 +99,7 @@ else()
     download_project(
       PROJ                rocprim
       GIT_REPOSITORY      https://github.com/CHIP-SPV/rocPRIM.git
-      GIT_TAG             hipstar
+      GIT_TAG             chipStar
       GIT_SHALLOW         TRUE
       INSTALL_DIR         ${CMAKE_CURRENT_BINARY_DIR}/deps/rocprim
       CMAKE_ARGS          -DBUILD_TEST=OFF -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR> -DCMAKE_PREFIX_PATH=/opt/rocm
