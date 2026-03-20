@@ -49,7 +49,7 @@ HIPCUB_DEVICE __forceinline__ void AsmThreadStore(void * ptr, T val)
     __builtin_memcpy(ptr, &val, sizeof(T));
 }
 
-#if HIPCUB_THREAD_STORE_USE_CACHE_MODIFIERS == 1
+#if HIPCUB_THREAD_STORE_USE_CACHE_MODIFIERS == 1 && !defined(__HIP_PLATFORM_SPIRV__)
 
 // NOTE: the reason there is an interim_type is because of a bug for 8bit types.
 // TODO fix flat_store_ubyte and flat_store_sbyte issues
