@@ -1,0 +1,36 @@
+# CTest exclude patterns. Each entry links to an upstream issue.
+# Fix the test, then remove the entry.
+
+# Most hipCUB test failures are SEGFAULT caused by IGC silently dropping
+# kernels after SIMD32 register-pressure retry (IGC bug #403:
+# https://github.com/intel/intel-graphics-compiler/issues/403).
+# When a kernel is missing from the compiled binary, chipStar returns a null
+# function pointer and the test segfaults.
+#
+# Some "Failed" tests are downstream of the fp16 warp_shuffle IGC miscompile
+# (IGC bug #402: https://github.com/intel/intel-graphics-compiler/issues/402),
+# fixed for rocPRIM in CHIP-SPV/rocPRIM#3 but hipCUB re-exposes the same
+# code paths.
+hipcub\.CachingDeviceAllocator
+hipcub\.BlockAdjacentDifference
+hipcub\.BlockDiscontinuity
+hipcub\.BlockExchange
+hipcub\.BlockLoadStore
+hipcub\.BlockRadixRank
+hipcub\.BlockRadixSort
+hipcub\.BlockRunLengthDecode
+hipcub\.DeviceAdjacentDifference
+hipcub\.DeviceHistogram
+hipcub\.DeviceRadixSort
+hipcub\.DeviceReduce
+hipcub\.DeviceRunLengthEncode
+hipcub\.DeviceReduceByKey
+hipcub\.DeviceSegmentedRadixSort
+hipcub\.DeviceSegmentedReduce
+hipcub\.DeviceSegmentedSort
+hipcub\.DeviceSelect
+hipcub\.Grid
+hipcub\.WarpExchange
+hipcub\.WarpMergeSort
+hipcub\.ThreadOperations
+hipcub\.ThreadSort
